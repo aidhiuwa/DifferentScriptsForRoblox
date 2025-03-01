@@ -114,15 +114,41 @@ function module.ConnectGUI()
 
 	-- Scripts:
 
-	Closee.MouseButton1Click:Connect(function()
-		ScreenGui:Destroy()
-	end)
+	local function YCNI_fake_script() -- TextButtonChanger
+		local script = Instance.new('Script', TemplateButton)
 
-	game:GetService("UserInputService").InputBegan:Connect(function(key)
-		if key.KeyCode == Enum.KeyCode.RightBracket then
-			ScreenGui.Enabled = not ScreenGui.Enabled
-		end
-	end)
+		local active = false
+
+		script.Parent.MouseButton1Click:Connect(function()
+			active = not active
+			if active then
+				script.Parent.TextColor3 = Color3.new(0, 1, 0)
+			else
+				script.Parent.TextColor = Color3.new(1, 0, 0)
+			end
+		end)
+	end
+	coroutine.wrap(YCNI_fake_script)()
+	local function SEBRUUC_fake_script() -- Close Button Script
+		local script = Instance.new('Script', Closee)
+
+		script.Parent.MouseButton1Click:Connect(function()
+			script.Parent.Parent.Parent.Enabled = false
+		end)
+	end
+	coroutine.wrap(SEBRUUC_fake_script)()
+	local function ACSVTMG_fake_script() -- UIS script 
+		local script = Instance.new('Script', ScreenGui)
+		
+		local UIS = game:GetService("UserInputService")
+
+		UIS.InputBegan:Connect(function(key)
+			if key.KeyCode == Enum.KeyCode.RightBracket then
+				script.Parent.Enabled = not script.Parent.Enabled
+			end
+		end)
+	end
+	coroutine.wrap(ACSVTMG_fake_script)
 end
 
 function module.AddButton(Data)
