@@ -144,7 +144,7 @@ function module.ConnectGUI()
 
 		UIS.InputBegan:Connect(function(key)
 			if key.KeyCode == Enum.KeyCode.RightBracket then
-				script.Parent.Enabled = not script.Parent.Enabled
+				ScreenGui.Enabled = not ScreenGui.Enabled
 			end
 		end)
 	end
