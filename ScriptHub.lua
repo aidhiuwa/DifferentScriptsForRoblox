@@ -148,7 +148,7 @@ function module.ConnectGUI()
 			end
 		end)
 	end
-	coroutine.wrap(ACSVTMG_fake_script)
+	coroutine.wrap(ACSVTMG_fake_script)()
 end
 
 function module.AddButton(Data)
