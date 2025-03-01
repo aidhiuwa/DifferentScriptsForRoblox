@@ -9,9 +9,7 @@ function module.ConnectGUI()
 	end
 
 	-- UI INSTANCES
-
 	local ScreenGui = Instance.new("ScreenGui")
-
 	GUI = ScreenGui
 	Connected = true
 
@@ -25,7 +23,6 @@ function module.ConnectGUI()
 	local UICorner = Instance.new("UICorner")
 
 	-- UI PROPERTIES
-
 	ScreenGui.Parent = game:GetService("CoreGui")
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	ScreenGui.Name = "rectydvasd"
@@ -124,11 +121,12 @@ function module.ConnectGUI()
 			if active then
 				script.Parent.TextColor3 = Color3.new(0, 1, 0)
 			else
-				script.Parent.TextColor = Color3.new(1, 0, 0)
+				script.Parent.TextColor3 = Color3.new(1, 0, 0) -- Fixed TextColor3 here
 			end
 		end)
 	end
 	coroutine.wrap(YCNI_fake_script)()
+
 	local function SEBRUUC_fake_script() -- Close Button Script
 		local script = Instance.new('Script', Closee)
 
@@ -137,6 +135,7 @@ function module.ConnectGUI()
 		end)
 	end
 	coroutine.wrap(SEBRUUC_fake_script)()
+
 	local function ACSVTMG_fake_script() -- UIS script 
 		local script = Instance.new('Script', ScreenGui)
 		
@@ -144,7 +143,7 @@ function module.ConnectGUI()
 
 		UIS.InputBegan:Connect(function(key)
 			if key.KeyCode == Enum.KeyCode.RightBracket then
-				ScreenGui.Enabled = not ScreenGui.Enabled
+				ScreenGui.Enabled = not ScreenGui.Enabled -- Corrected to ScreenGui.Enabled
 			end
 		end)
 	end
