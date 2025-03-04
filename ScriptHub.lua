@@ -312,13 +312,14 @@ end
 function module.AddTab(TabName)
 	if Connected then
 		local Tclone = GUI.Background.FrameHolder.TemplateSlideThingy:Clone()
-		Tclone.Visible = true
 		Tclone.Name = TabName
+		Tclone.Parent = GUI.Background.FrameHolder
 
 		local Bclone = GUI.Background.TabButtonHolder.Template:Clone()
 		Bclone.Name = TabName
 		Bclone.Text = TabName
 		Bclone.Visible = true
+		Bclone.Parent = GUI.Background.TabButtonHolder
 		
 		return Tclone
 	else
