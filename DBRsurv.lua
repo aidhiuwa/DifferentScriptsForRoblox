@@ -19,10 +19,14 @@ end
 
 local function PlayerButtons()
 	for i, SelectePlr in pairs(game.Players:GetPlayers()) do
+		
+		local Tab = module.AddTab(SelectePlr.Name)
+		
 		if SelectePlr ~= Killer then
 			module.AddButton({ -- Heal Button
 				SelectePlr.Name.."_H";
 				"Heal "..SelectePlr.Name;
+				Tab,
 				function()
 					local function ProgressRemote(player)
 						local args = {
@@ -86,6 +90,7 @@ local function PlayerButtons()
 			module.AddButton({ -- Teleport To Button
 				"TP_"..SelectePlr.Name;
 				"Teleport to "..SelectePlr.Name;
+				Tab,
 				function()
 					plr.Character:MoveTo(SelectePlr.Character.HumanoidRootPart.Position + Vector3.new(0, 5, 0))
 				end,
@@ -112,9 +117,12 @@ if module then
 	
 	module.ConnectGUI()
 	
+	local KillerTab = module.AddTab("Killer")
+	
 	module.AddButton({ -- Blind Killer
 		"BlindKiller";
 		"Blinds Killer";
+		KillerTab;
 		function()
 			if not Killer then warn("Killer No Select") return end
 
@@ -138,6 +146,7 @@ if module then
 	module.AddButton({ -- Force Wiggle
 		"ForceWig",
 		"Force Your Own Wiggle",
+		KillerTab;
 		function()
 			local count = 0
 
@@ -163,6 +172,7 @@ if module then
 	module.AddButton({ -- Unhook all
 		"UA";
 		"Unhook all other survivors";
+		nil;
 		function()
 			local function UnhookEvent(Plrare, Hook)
 				if Plrare ~= plr then
@@ -192,6 +202,7 @@ if module then
 	module.AddButton({ -- Killer Break Time
 		"BK";
 		"Break Killer (1 - 100)s";
+		KillerTab;
 		function()
 			if not Killer then warn("No killer Selected") return end
 			
@@ -299,6 +310,7 @@ if module then
 	module.AddTextBox({ -- Vault Speed
 		"VS";
 		"Change Vault Speed (0.1(Fast) - 300(Slow))";
+		nil;
 		function(text)
 			if not tonumber(text) then warn("Use Numbers from 0.1-300") return end	
 			
@@ -312,6 +324,7 @@ if module then
 	module.AddButton({ -- Player Auras
 		"PA";
 		"Highlight Players";
+		nil;
 		function()
 			for i, player in pairs(game.Players:GetPlayers()) do
 				local HL = Instance.new("Highlight", player.Character)
@@ -327,6 +340,7 @@ if module then
 	module.AddButton({ -- Give Max Stacks for Resourceful
 		"MSfR";
 		"Fill Resourcful Stacks (Needs perk equipped)";
+		nil;
 		function()
 			plr.Character:SetAttribute("Resourceful", 4)
 		end
