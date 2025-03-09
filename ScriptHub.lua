@@ -318,7 +318,7 @@ function module.AddTab(TabName)
 
 			script.Parent.MouseButton1Click:Connect(function()
 				for i, tab in pairs(script.Parent.Parent.Parent.FrameHolder:GetChildren()) do
-					if tab.Name == "MainTab" then
+					if tab.Name == script.Parent.Name then
 						tab.Visible = true
 					else
 						tab.Visible = false
