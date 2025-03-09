@@ -11,6 +11,8 @@ function module.ConnectGUI()
 	local ScreenGui = Instance.new("ScreenGui")
 	
 	GUI = ScreenGui
+	Connected = true
+	
 	local Background = Instance.new("Frame")
 	local FrameHolder = Instance.new("ScrollingFrame")
 	local ItemTemplates = Instance.new("Frame")
@@ -175,7 +177,7 @@ function module.ConnectGUI()
 	MainTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	MainTab_2.BorderSizePixel = 0
 	MainTab_2.Size = UDim2.new(0.933333337, 0, 0.0438061133, 0)
-	MainTab_2.Visible = false
+	MainTab_2.Visible = true
 	MainTab_2.Font = Enum.Font.SourceSans
 	MainTab_2.Text = "TabButton"
 	MainTab_2.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -257,8 +259,6 @@ function module.ConnectGUI()
 		end)
 	end
 	coroutine.wrap(DCHDRL_fake_script)()
-	
-	Connected = true
 end
 
 function module.AddButton(Data)
