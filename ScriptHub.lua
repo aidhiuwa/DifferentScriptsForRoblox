@@ -4,15 +4,13 @@ local Connected = false
 local module = {}
 
 function module.ConnectGUI()
-	if game:GetService("CoreGui"):FindFirstChild("cratsdvy!23as") then
-		game:GetService("CoreGui"):FindFirstChild("cratsdvy!23as"):Destroy()
+	if game:GetService("CoreGui"):FindFirstChild("UYasdijfb8u1@") then
+		game:GetService("CoreGui"):FindFirstChild("UYasdijfb8u1@"):Destroy()
 	end
 
 	local ScreenGui = Instance.new("ScreenGui")
 	
 	GUI = ScreenGui
-	Connected = true
-	
 	local Background = Instance.new("Frame")
 	local FrameHolder = Instance.new("ScrollingFrame")
 	local ItemTemplates = Instance.new("Frame")
@@ -27,16 +25,19 @@ function module.ConnectGUI()
 	local TabButtonHolder = Instance.new("ScrollingFrame")
 	local Template = Instance.new("TextButton")
 	local UIGridLayout_3 = Instance.new("UIGridLayout")
-	local MainTabButton = Instance.new("TextButton")
+	local MainTab_2 = Instance.new("TextButton")
+
+	--Properties:
 
 	ScreenGui.Parent = game:GetService("CoreGui")
+	ScreenGui.Name = "UYasdijfb8u1@"
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	ScreenGui.Name = "cratsdvy!23as"
 
 	Background.Name = "Background"
 	Background.Parent = ScreenGui
-	Background.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Background.BackgroundTransparency = 0.300
+	Background.Active = true
+	Background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Background.BackgroundTransparency = 0.500
 	Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Background.BorderSizePixel = 0
 	Background.Position = UDim2.new(0.320626646, 0, 0.173498571, 0)
@@ -46,7 +47,7 @@ function module.ConnectGUI()
 	FrameHolder.Parent = Background
 	FrameHolder.Active = true
 	FrameHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	FrameHolder.BackgroundTransparency = 1.000
+	FrameHolder.BackgroundTransparency = 0.500
 	FrameHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	FrameHolder.BorderSizePixel = 0
 	FrameHolder.Position = UDim2.new(0.241999999, 0, 0.116999999, 0)
@@ -141,8 +142,8 @@ function module.ConnectGUI()
 	TabButtonHolder.Name = "TabButtonHolder"
 	TabButtonHolder.Parent = Background
 	TabButtonHolder.Active = true
-	TabButtonHolder.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	TabButtonHolder.BackgroundTransparency = 0.300
+	TabButtonHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TabButtonHolder.BackgroundTransparency = 0.500
 	TabButtonHolder.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	TabButtonHolder.BorderSizePixel = 0
 	TabButtonHolder.Position = UDim2.new(-0.376329154, 0, 0, 0)
@@ -162,29 +163,29 @@ function module.ConnectGUI()
 	Template.TextScaled = true
 	Template.TextSize = 14.000
 	Template.TextWrapped = true
-	
-	MainTabButton.Name = "MainTab"
-	MainTabButton.Parent = TabButtonHolder
-	MainTabButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	MainTabButton.BackgroundTransparency = 0.650
-	MainTabButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	MainTabButton.BorderSizePixel = 0
-	MainTabButton.Size = UDim2.new(0.933333337, 0, 0.0438061133, 0)
-	MainTabButton.Visible = true
-	MainTabButton.Font = Enum.Font.SourceSans
-	MainTabButton.Text = "Main Tab Button"
-	MainTabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-	MainTabButton.TextScaled = true
-	MainTabButton.TextSize = 14.000
-	MainTabButton.TextWrapped = true
 
 	UIGridLayout_3.Parent = TabButtonHolder
 	UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 	UIGridLayout_3.CellSize = UDim2.new(0.933000028, 0, 0.0439999998, 0)
 
+	MainTab_2.Name = "MainTab"
+	MainTab_2.Parent = TabButtonHolder
+	MainTab_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	MainTab_2.BackgroundTransparency = 0.650
+	MainTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	MainTab_2.BorderSizePixel = 0
+	MainTab_2.Size = UDim2.new(0.933333337, 0, 0.0438061133, 0)
+	MainTab_2.Visible = false
+	MainTab_2.Font = Enum.Font.SourceSans
+	MainTab_2.Text = "TabButton"
+	MainTab_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+	MainTab_2.TextScaled = true
+	MainTab_2.TextSize = 14.000
+	MainTab_2.TextWrapped = true
+
 	-- Scripts:
 
-	local function FCINW_fake_script() -- TemplateButton.TextColourChanger 
+	local function QQPI_fake_script() -- TemplateButton.TextColourChanger 
 		local script = Instance.new('Script', TemplateButton)
 
 		local active = false
@@ -198,16 +199,16 @@ function module.ConnectGUI()
 			end
 		end)
 	end
-	coroutine.wrap(FCINW_fake_script)()
-	local function IPGDZSB_fake_script() -- Closee.Script 
+	coroutine.wrap(QQPI_fake_script)()
+	local function ZXDCKSS_fake_script() -- Closee.Script 
 		local script = Instance.new('Script', Closee)
 
 		script.Parent.MouseButton1Click:Connect(function()
 			script.Parent.Parent.Parent.Enabled = false
 		end)
 	end
-	coroutine.wrap(IPGDZSB_fake_script)()
-	local function RRUGC_fake_script() -- Template.Script 
+	coroutine.wrap(ZXDCKSS_fake_script)()
+	local function SAVWTUG_fake_script() -- Template.Script 
 		local script = Instance.new('Script', Template)
 
 		script.Parent.MouseButton1Click:Connect(function()
@@ -231,8 +232,22 @@ function module.ConnectGUI()
 			end
 		end)
 	end
-	coroutine.wrap(RRUGC_fake_script)()
-	local function SOBAQHA_fake_script() -- ScreenGui.HideAndShowUIS 
+	coroutine.wrap(SAVWTUG_fake_script)()
+	local function ZJMTLT_fake_script() -- MainTab_2.Script 
+		local script = Instance.new('Script', MainTab_2)
+
+		script.Parent.MouseButton1Click:Connect(function()
+			for i, tab in pairs(script.Parent.Parent.Parent.FrameHolder:GetChildren()) do
+				if tab.Name == "MainTab" then
+					tab.Visible = true
+				else
+					tab.Visible = false
+				end
+			end
+		end)
+	end
+	coroutine.wrap(ZJMTLT_fake_script)()
+	local function DCHDRL_fake_script() -- ScreenGui.HideAndShowUIS 
 		local script = Instance.new('Script', ScreenGui)
 
 		game:GetService("UserInputService").InputBegan:Connect(function(key)
@@ -241,32 +256,9 @@ function module.ConnectGUI()
 			end
 		end)
 	end
-	coroutine.wrap(SOBAQHA_fake_script)()
-	local function e123() -- Template.Script 
-		local script = Instance.new('Script', Template)
-
-		script.Parent.MouseButton1Click:Connect(function()
-			for i, tab in pairs(script.Parent.Parent.Parent.FrameHolder:GetChildren()) do
-				if tab.Name == script.Parent.Name then
-					tab.Visible = true
-				else
-					tab.Visible = false
-				end
-			end
-
-			if script.Parent.Parent.Parent.FrameHolder:FindFirstChild(script.Parent.Name) then
-			else
-				for i, tab in pairs(script.Parent.Parent.Parent.FrameHolder:GetChildren()) do
-					if tab.Name == "MainTab" then
-						tab.Visible = true
-					else
-						tab.Visible = false
-					end
-				end
-			end
-		end)
-	end
-	coroutine.wrap(e123)()
+	coroutine.wrap(DCHDRL_fake_script)()
+	
+	Connected = true
 end
 
 function module.AddButton(Data)
