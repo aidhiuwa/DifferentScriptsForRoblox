@@ -321,6 +321,32 @@ function module.AddTab(TabName)
 		Bclone.Visible = true
 		Bclone.Parent = GUI.Background.TabButtonHolder
 		
+		local function RRUGC_fake_script() -- Template.Script 
+			local script = Instance.new('Script', Bclone)
+
+			script.Parent.MouseButton1Click:Connect(function()
+				for i, tab in pairs(script.Parent.Parent.Parent.FrameHolder:GetChildren()) do
+					if tab.Name == script.Parent.Name then
+						tab.Visible = true
+					else
+						tab.Visible = false
+					end
+				end
+
+				if script.Parent.Parent.Parent.FrameHolder:FindFirstChild(script.Parent.Name) then
+				else
+					for i, tab in pairs(script.Parent.Parent.Parent.FrameHolder:GetChildren()) do
+						if tab.Name == "MainTab" then
+							tab.Visible = true
+						else
+							tab.Visible = false
+						end
+					end
+				end
+			end)
+		end
+		coroutine.wrap(RRUGC_fake_script)()
+		
 		return Tclone
 	else
 		error("Connect GUI")
