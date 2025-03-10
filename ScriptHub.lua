@@ -75,7 +75,7 @@ function module.ConnectGUI()
 	TemplateButton.Position = UDim2.new(-0.00192432734, 0, 0.0132294791, 0)
 	TemplateButton.Size = UDim2.new(0.192432731, 0, 0.165368482, 0)
 	TemplateButton.Font = Enum.Font.SourceSans
-	TemplateButton.TextColor3 = Color3.fromRGB(54, 255, 54)
+	TemplateButton.TextColor3 = Color3.fromRGB(255,0,0)
 	TemplateButton.TextScaled = true
 	TemplateButton.TextSize = 14.000
 	TemplateButton.TextWrapped = true
@@ -186,22 +186,6 @@ function module.ConnectGUI()
 	MainTab_2.TextWrapped = true
 
 	-- Scripts:
-
-	local function QQPI_fake_script() -- TemplateButton.TextColourChanger 
-		local script = Instance.new('Script', TemplateButton)
-
-		local active = false
-
-		script.Parent.MouseButton1Click:Connect(function()
-			active = not active
-			if active then
-				script.Parent.TextColor3 = Color3.new(0, 1, 0)
-			else
-				script.Parent.TextColor = Color3.new(1, 0, 0)
-			end
-		end)
-	end
-	coroutine.wrap(QQPI_fake_script)()
 	local function ZXDCKSS_fake_script() -- Closee.Script 
 		local script = Instance.new('Script', Closee)
 
@@ -274,6 +258,22 @@ function module.AddButton(Data)
 		else
 			Button.Parent = GUI.Background.FrameHolder.MainTab
 		end
+		
+		local function QQPI_fake_script() -- TemplateButton.TextColourChanger 
+			local script = Instance.new('Script', Button)
+
+			local active = false
+
+			script.Parent.MouseButton1Click:Connect(function()
+				active = not active
+				if active then
+					script.Parent.TextColor3 = Color3.new(0, 1, 0)
+				else
+					script.Parent.TextColor = Color3.new(1, 0, 0)
+				end
+			end)
+		end
+		coroutine.wrap(QQPI_fake_script)()
 		
 		Button.MouseButton1Click:Connect(Fire)
 	end
